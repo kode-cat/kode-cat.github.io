@@ -13,9 +13,8 @@
 
       /* Global Variables */
       :root {
-        --primary-color: red;
-        /* Red */
-        --secondary-color: #6c757d;
+        --primary-color: red; /* Red */
+        --secondary-color: #ffffff; /* White */
         --success-color: #28a745;
         --danger-color: #dc3545;
         --warning-color: #ffc107;
@@ -50,28 +49,65 @@
       }
 
       /* Navigation Styles */
-      nav {
-        margin: 20px 0;
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background: var(--primary-color);
       }
 
-      nav ul {
+      .navbar .logo {
+        font-size: 1.5em;
+        color: #ffffff;
+      }
+
+      .navbar .menu {
+        display: flex;
         list-style: none;
         padding: 0;
+        margin: 0;
       }
 
-      nav li {
-        display: inline;
+      .navbar .menu li {
         margin: 0 15px;
       }
 
-      nav a {
+      .navbar .menu a {
         color: #ffffff;
         text-decoration: none;
         font-weight: bold;
       }
 
-      nav a:hover {
+      .navbar .menu a:hover {
         text-decoration: underline;
+      }
+
+      .navbar .menu-toggle {
+        display: none;
+        font-size: 1.5em;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        .navbar .menu {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .navbar .menu.active {
+          display: flex;
+        }
+
+        .navbar .menu li {
+          margin: 10px 0;
+        }
+
+        .navbar .menu-toggle {
+          display: block;
+        }
       }
 
       /* Main Content Styles */
@@ -94,7 +130,7 @@
       /* Aside Styles */
       aside {
         background: var(--secondary-color);
-        color: #ffffff;
+        color: #000000;
         padding: 15px;
         border-radius: var(--border-radius);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -359,37 +395,24 @@
   </head>
   <body>
     <header>
-      <h1>
-        <- Kode-Cat ->
-      </h1>
-      <!--
-      <nav>
-        <ul>
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+      <div class="navbar">
+        <div class="logo">Kode Cat</div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul class="menu" id="menu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
-      -->
+      </div>
     </header>
     <main>
       <section id="home">
         <article>
           <img src="kode-cat.png" alt="Kode Cat Logo" width="100%">
           <h2>Welcome to My Portfolio</h2>
-          <p>I'm a passionate web developer dedicated to building innovative solutions that enhance user experiences. My journey has led me through various technologies and frameworks, and I am excited to share my work with you!</p>
+          <p>I'm a passionate web developer dedicated to building innovative solutions that enhance user experiences. My journey has led me through various technologies and frameworks, and I am excite[...]
         </article>
         <blockquote>
           <p>"Great things in business are never done by one person; they're done by a team of people." - Steve Jobs</p>
@@ -410,7 +433,7 @@
       <!-- About Section -->
       <section id="about">
         <h3>About Me</h3>
-        <p>I am a web developer with a knack for problem-solving and creating beautiful, functional websites. Experienced in both front-end and back-end development, I continuously strive to learn new skills and stay updated with the latest technologies.</p>
+        <p>I am a web developer with a knack for problem-solving and creating beautiful, functional websites. Experienced in both front-end and back-end development, I continuously strive to learn new[...]
         <p>When I'm not coding, you can find me exploring nature trails, experimenting with new recipes in the kitchen, or playing guitar.</p>
         <!-- Add a photo or fun fact about yourself -->
         <!-- Example: -->
@@ -473,6 +496,12 @@
     <script>
       // Highlight All Code Blocks
       hljs.highlightAll();
+
+      // Responsive Menu Toggle
+      document.getElementById("menu-toggle").addEventListener("click", function() {
+        var menu = document.getElementById("menu");
+        menu.classList.toggle("active");
+      });
     </script>
   </body>
 </html>
