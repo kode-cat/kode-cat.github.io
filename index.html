@@ -57,6 +57,12 @@
         background: var(--primary-color);
       }
 
+      .navbar .main-bar {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+
       .navbar .logo {
         font-size: 1.5em;
         color: #ffffff;
@@ -91,6 +97,10 @@
       }
 
       @media (max-width: 768px) {
+       .navbar {
+         flex-direction: column;
+       }
+
         .navbar .menu {
           display: none;
           flex-direction: column;
@@ -396,8 +406,10 @@
   <body>
     <header>
       <div class="navbar">
-        <div class="logo">Kode Cat</div>
-        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <div class="main-bar">
+          <div class="logo">Kode Cat</div>
+          <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        </div>
         <ul class="menu" id="menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
