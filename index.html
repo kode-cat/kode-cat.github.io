@@ -40,7 +40,8 @@
         color: #ffffff;
         padding: 20px 0;
         text-align: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
       }
 
       header h1 {
@@ -53,14 +54,16 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 20px;
+        padding: 0px 20px;
         background: var(--primary-color);
       }
 
-      .navbar .main-bar {
+      .main-bar {
         display: flex;
         justify-content: space-between;
-        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        padding: 0 20px; /* Add padding to create space */
       }
 
       .navbar .logo {
@@ -69,10 +72,14 @@
       }
 
       .navbar .menu {
-        display: flex;
+        display: none;
         list-style: none;
-        padding: 0;
-        margin: 0;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .navbar .menu.active {
+        height: auto;
       }
 
       .navbar .menu li {
@@ -100,12 +107,6 @@
        .navbar {
          flex-direction: column;
        }
-
-        .navbar .menu {
-          display: none;
-          flex-direction: column;
-          width: 100%;
-        }
 
         .navbar .menu.active {
           display: flex;
@@ -407,7 +408,7 @@
     <header>
       <div class="navbar">
         <div class="main-bar">
-          <div class="logo">Kode Cat</div>
+          <div class="logo">Kode-Cat</div>
           <div class="menu-toggle" id="menu-toggle">&#9776;</div>
         </div>
         <ul class="menu" id="menu">
