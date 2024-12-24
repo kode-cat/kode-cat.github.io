@@ -3,518 +3,111 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="kode-cat, kode cat, coding, html, css, js">
+    <meta name="author" content="Mohammad Aqib">
+    <meta name="description" content="I am a web developer with a passion for problem-solving and creating beautiful, functional websites.">
     <title>My Portfolio - Kode Cat</title>
     <link rel="stylesheet" href="hljs.css">
     <script src="hljs.js"></script>
     <link rel="stylesheet" href="styles.css">
     <style>
-      /* Imports */
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
-      /* Global Variables */
-      :root {
-        --primary-color: red; /* Red */
-        --secondary-color: #ffffff; /* White */
-        --success-color: #28a745;
-        --danger-color: #dc3545;
-        --warning-color: #ffc107;
-        --info-color: #17a2b8;
-        --light-color: #f8f9fa;
-        --dark-color: #343a40;
-        --border-radius: 5px;
-        --font-family: "JetBrains Mono", monospace;
-      }
-
-      /* General Body Styles */
-      body {
-        font-family: var(--font-family);
-        margin: 0;
-        padding: 0;
-        background-color: var(--light-color);
-        color: var(--dark-color);
-      }
-
-      /* Header Styles */
-      header {
-        background: var(--primary-color);
-        color: #ffffff;
-        padding: 20px 0;
-        text-align: center;
-        position: sticky;
-        top: 0;
-      }
-
-      header h1 {
-        margin: 0;
-        font-size: 3.5em;
-      }
-
-      /* Navigation Styles */
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0px 20px;
-        background: var(--primary-color);
-      }
-
-      .main-bar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        padding: 0 20px; /* Add padding to create space */
-      }
-
-      .navbar .logo {
-        font-size: 1.5em;
-        color: #ffffff;
-      }
-
-      .navbar .menu {
-        display: none;
-        list-style: none;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .navbar .menu.active {
-        height: auto;
-      }
-
-      .navbar .menu li {
-        margin: 0 15px;
-      }
-
-      .navbar .menu a {
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-
-      .navbar .menu a:hover {
-        text-decoration: underline;
-      }
-
-      .navbar .menu-toggle {
-        display: none;
-        font-size: 1.5em;
-        color: #ffffff;
-        cursor: pointer;
-      }
-
-      @media (max-width: 768px) {
-       .navbar {
-         flex-direction: column;
-       }
-
-        .navbar .menu.active {
-          display: flex;
-        }
-
-        .navbar .menu li {
-          margin: 10px 0;
-        }
-
-        .navbar .menu-toggle {
-          display: block;
-        }
-      }
-
-      /* Main Content Styles */
-      main {
-        padding: 20px;
-        background: #ffffff;
-        border-radius: var(--border-radius);
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Section Styles */
-      section {
-        margin: 20px 0;
-        padding: 15px;
-        border: 1px solid var(--dark-color);
-        background-color: var(--light-color);
-        border-radius: var(--border-radius);
-      }
-
-      /* Aside Styles */
-      aside {
-        background: var(--secondary-color);
-        color: #000000;
-        padding: 15px;
-        border-radius: var(--border-radius);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        margin: 20px 0;
-      }
-
-      /* Article Styles */
-      article {
-        margin-bottom: 40px;
-        border-bottom: 1px solid var(--secondary-color);
-        padding-bottom: 20px;
-      }
-
-      article h2 {
-        color: var(--dark-color);
-        font-size: 2em;
-      }
-
-      article p {
-        margin: 15px 0;
-      }
-
-      article img {
-        max-width: 100%;
-        border-radius: var(--border-radius);
-      }
-
-      /* Text Formatting Styles */
-      b {
-        font-weight: bold;
-      }
-
-      i {
-        font-style: italic;
-        color: var(--secondary-color);
-      }
-
-      u {
-        text-decoration: underline;
-      }
-
-      s {
-        text-decoration: line-through;
-        color: var(--secondary-color);
-      }
-
-      mark {
-        background-color: var(--warning-color);
-      }
-
-      a {
-        color: var(--primary-color);
-      }
-
-      button {
-        color: white;
-        background: var(--primary-color);
-        padding: 5px;
-        font-size: 15px;
-        border-radius: var(--border-radius);
-        border: none;
-        margin: 10px 0;
-      }
-
-      /* Code and Preformatted Text Styles */
-      code {
-        background-color: var(--light-color);
-        padding: 10px;
-        border-radius: var(--border-radius);
-      }
-
-      pre {
-        background-color: var(--light-color);
-        border-radius: var(--border-radius);
-        overflow: auto;
-      }
-
-      /* Small Text Styles */
-      small {
-        font-size: 0.8em;
-        color: var(--secondary-color);
-      }
-
-      /* Subscript and Superscript Styles */
-      sub {
-        font-size: 0.8em;
-      }
-
-      sup {
-        font-size: 0.8em;
-      }
-
-      /* Abbreviation Styles */
-      abbr {
-        border-bottom: 1px dotted;
-        cursor: help;
-      }
-
-      /* Time Element Styles */
-      time {
-        font-style: italic;
-        color: var(--secondary-color);
-      }
-
-      /* Progress Element Styles */
-      progress {
-        width: 100%;
-        height: 20px;
-        accent-color: var(--primary-color);
-      }
-
-      /* Fieldset and Legend Styles */
-      fieldset {
-        border: 1px solid var(--primary-color);
-        border-radius: var(--border-radius);
-        padding: 15px;
-        background: var(--light-color);
-      }
-
-      legend {
-        font-weight: bold;
-        color: var(--primary-color);
-      }
-
-      /* Horizontal Rule Styles */
-      hr {
-        border: 0;
-        height: 1px;
-        background: var(--secondary-color);
-        margin: 20px 0;
-      }
-
-      /* Canvas Styles */
-      canvas {
-        max-width: 100%;
-        border: 1px solid var(--secondary-color);
-        border-radius: var(--border-radius);
-      }
-
-      /* Iframe Styles */
-      iframe {
-        width: 100%;
-        border: none;
-        border-radius: var(--border-radius);
-      }
-
-      /* Video Styles */
-      video {
-        max-width: 100%;
-        border-radius: var(--border-radius);
-      }
-
-      /* Audio Styles */
-      audio {
-        width: 100%;
-      }
-
-      /* Keyboard Input Styles */
-      kbd {
-        font-family: 'Courier New', Courier, monospace;
-        background-color: var(--light-color);
-        padding: 2px 4px;
-        border-radius: var(--border-radius);
-      }
-
-      /* Variable Styles */
-      var {
-        font-style: italic;
-      }
-
-      /* Address Styles */
-      address {
-        font-style: italic;
-        color: var(--secondary-color);
-      }
-
-      /* Blockquote Styles */
-      blockquote {
-        background: var(--light-color);
-        border-left: 5px solid var(--primary-color);
-        padding: 10px 20px;
-        margin: 20px 0;
-        font-style: italic;
-      }
-
-      /* List Styles */
-      ul {
-        padding-left: 20px;
-      }
-
-      li {
-        margin: 5px 0;
-      }
-
-      /* Table Styles */
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 20px 0;
-      }
-
-      th,
-      td {
-        border: 1px solid var(--secondary-color);
-        padding: 10px;
-        text-align: left;
-      }
-
-      th {
-        background-color: var(--primary-color);
-        color: white;
-      }
-
-      /* Details and Summary Styles */
-      details {
-        margin: 20px 0px;
-        background: var(--light-color);
-        border-radius: var(--border-radius);
-        padding: 10px;
-        padding-left: 15px;
-      }
-
-      details summary::before {
-        content: "";
-        padding: 2px;
-      }
-
-      summary {
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      /* Footer Styles */
-      footer {
-        text-align: center;
-        padding: 5px 0;
-        background: var(--primary-color);
-        color: #ffffff;
-        position: sticky;
-        bottom: 0;
-        width: 100%;
-        z-index: 1000;
-      }
-
-      header a,
-      footer a {
-        color: white;
-      }
-
-      /* Responsive Styles */
-      @media (max-width: 600px) {
-        header h1 {
-          font-size: 2em;
-        }
-
-        nav li {
-          display: block;
-          margin: 5px 0;
-        }
-      }
     </style>
   </head>
   <body>
     <header>
       <div class="navbar">
-        <div class="main-bar">
-          <div class="logo">Kode-Cat</div>
-          <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-        </div>
+        <div class="logo">Kode Cat</div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
         <ul class="menu" id="menu">
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
+          <!--
+          <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+          <script>
+            const toggleDarkMode = () => {
+                document.body.classList.toggle('dark-mode');
+            }
+          </script>
+          #010203-->
         </ul>
       </div>
     </header>
+
     <main>
+      <!-- Home Section -->
       <section id="home">
-        <article>
-          <img src="kode-cat.png" alt="Kode Cat Logo" width="100%">
-          <h2>Welcome to My Portfolio</h2>
-          <p>I'm a passionate web developer dedicated to building innovative solutions that enhance user experiences. My journey has led me through various technologies and frameworks, and I am excite[...]
-        </article>
-        <blockquote>
-          <p>"Great things in business are never done by one person; they're done by a team of people." - Steve Jobs</p>
-        </blockquote>
-        <hr>
-        <h3>Embedded Media</h3>
-        <iframe src="https://www.example.com" title="Example Iframe" width="300" height="200"></iframe>
-        <!-- Add video or audio examples if needed -->
-        <hr>
-        <h3>List Example: My Interests</h3>
-        <ul>
-          <li>Coding and Software Development</li>
-          <li>Artificial Intelligence & Machine Learning</li>
-          <li>Graphic Design & UI/UX Principles</li>
-          <li>Traveling and Exploring New Cultures</li>
-        </ul>
+        <img src="kode-cat.png" alt="kode-cat.png">
+        <h2>Welcome to My Portfolio</h2>
+        <p>I'm a passionate web developer dedicated to building innovative solutions that enhance user experiences. My journey has led me through various technologies and frameworks, and I am excited to continue learning and growing in this field.</p>
       </section>
+
       <!-- About Section -->
       <section id="about">
         <h3>About Me</h3>
-        <p>I am a web developer with a knack for problem-solving and creating beautiful, functional websites. Experienced in both front-end and back-end development, I continuously strive to learn new[...]
-        <p>When I'm not coding, you can find me exploring nature trails, experimenting with new recipes in the kitchen, or playing guitar.</p>
-        <!-- Add a photo or fun fact about yourself -->
-        <!-- Example: -->
-        <!-- <img src="my_photo.jpg" alt="My Photo" width="150"> -->
+        <p>I am a web developer with a passion for problem-solving and creating beautiful, functional websites. I specialize in both front-end and back-end development, and I love exploring new technologies.</p>
+        <p>In my free time, you can find me exploring the outdoors, cooking new recipes, or playing music.</p>
       </section>
+
       <!-- Projects Section -->
       <section id="projects">
         <h3>Projects</h3>
-        <!-- Individual project entries -->
         <div class="project">
-          <h4>Project Title 1</h4>
-          <p>Description: A web application that allows users to manage their tasks effectively. Built using React and Node.js.</p>
-          <a href="#" target="_blank">View Project</a> | <span class="tech-stack">Technologies used: HTML, CSS, JavaScript, React, Node.js</span>
-          <!-- Consider including screenshots -->
-          <!-- Example: -->
-          <!-- <img src="project1_screenshot.png" alt="Project 1 Screenshot" width="100%"> -->
+          <h4>Project 1</h4>
+          <p>Description: A web app that helps users manage tasks effectively. Built using React and Node.js.</p>
+          <a href="#">View Project</a>
         </div>
         <div class="project">
-          <h4>Project Title 2</h4>
-          <p>Description: An e-commerce website employing a custom backend solution for smooth transactions.</p>
-          <a href="#" target="_blank">View Project</a> | <span class="tech-stack">Technologies used: HTML, CSS, JavaScript, Express.js, MongoDB</span>
+          <h4>Project 2</h4>
+          <p>Description: An e-commerce platform with custom back-end solutions. Built using HTML, CSS, JavaScript, and MongoDB.</p>
+          <a href="#">View Project</a>
         </div>
       </section>
+
       <!-- Skills Section -->
       <section id="skills">
         <h3>Skills</h3>
-        <!-- Use a progress bar for visual representation if needed -->
-        <!-- Example progress bars can use actual CSS styling -->
-        <!-- List skills with proficiency levels -->
         <ul>
           <li>HTML & CSS - 90%</li>
           <li>JavaScript - 85%</li>
           <li>React - 80%</li>
           <li>Node.js - 75%</li>
-          <li>Python - 70%</li>
-          <li>UI/UX Design - 80%</li>
         </ul>
+        <progress value="85" max="100"></progress>
       </section>
+
       <!-- Contact Section -->
       <section id="contact">
         <h3>Contact Me</h3>
-        <p>Feel free to reach out if you'd like to collaborate on a project or just want to say hello!</p>
         <form action="submit_form.php" method="post">
-          <label for="name">Name&nbsp;&nbsp;&nbsp;:</label>
-          <input type="text" id="name" name="name" required>
-          <br>
-          <label for="email">Email&nbsp;&nbsp;:</label>
-          <input type="email" id="email" name="email" required>
-          <br>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your name">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email">
           <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="5" cols="23.5" required></textarea> <br>
+          <textarea id="message" name="message" rows="5" required placeholder="Your message here"></textarea>
           <button type="submit">Send Message</button>
         </form>
       </section>
     </main>
+
     <footer>
       <p>&copy; 2024 Kode Cat All Rights Reserved.</p>
-      <p>Follow me on: <a href="https://github.com/kode-cat" target="blank">GitHub</a>, <a href="https://codepen.io/kode-cat" target="blank">Codepen</a>. </p>
+      <p>Follow me on: <a href="https://github.com/kode-cat" target="_blank">GitHub</a>, <a href="https://codepen.io/kode-cat" target="_blank">Codepen</a>.</p>
     </footer>
-    <script>
-      // Highlight All Code Blocks
-      hljs.highlightAll();
 
+    <script>
       // Responsive Menu Toggle
       document.getElementById("menu-toggle").addEventListener("click", function() {
         var menu = document.getElementById("menu");
         menu.classList.toggle("active");
       });
+
+      // Highlight All Code Blocks
+      hljs.highlightAll();
     </script>
   </body>
 </html>
