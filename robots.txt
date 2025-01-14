@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: / 
+Sitemap: https://kode-cat.pages.dev/sitemap.xml 
+
+Host: kode-cat.github.io
+Disallow: /
+
+Host: kode-cat.pages.dev
+Allow: / 
